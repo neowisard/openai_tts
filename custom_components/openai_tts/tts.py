@@ -68,7 +68,7 @@ class OpenAITTSEntity(TextToSpeechEntity):
     def get_tts_audio(self, message, language, options=None):
         """Convert a given text to speech and return it as bytes."""
         try:
-            if len(message) > 4096:
+            if len(message) > 2096:
                 raise MaxLengthExceeded
 
             speech = self._engine.get_tts(message)
