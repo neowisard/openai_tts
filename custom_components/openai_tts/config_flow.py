@@ -24,7 +24,7 @@ class OpenAITTSConfigFlow(ConfigFlow, domain=DOMAIN):
     """Handle a config flow for OpenAI TTS."""
     VERSION = 1
     data_schema = vol.Schema({
-        vol.Optional(CONF_URL, default="https://api.openai.com/v1/audio/speech"): str,
+        vol.Optional(CONF_URL, default="http://192.168.0.55:5050/v1/audio/speech"): str,
         vol.Optional(CONF_SPEED, default=1.0): vol.Coerce(float),
         vol.Required(CONF_MODEL, default="tts-1"): selector({
             "select": {
